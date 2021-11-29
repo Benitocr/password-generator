@@ -148,7 +148,7 @@ function generatePassword(){
 var generateBtn = document.querySelector("#generate");
 // fuction to ask for the leght of characters
 function characterLength(){
-    promptlength = window.prompt("Choose a length of at least 8 characters and no more than 128 characters");
+    promptlength = window.prompt("Please enter the length of the password, it must be at least 8 characters and no more than 128 characters long");
     if (promptlength ===""||promptlength === null){
         window.alert("You need to provide a valid answer! Please try again.");
         return characterLength();
@@ -161,7 +161,7 @@ function characterLength(){
 }
 //fuction to choose lowercase, upercase or both type of characters
 function chooseLowUpCase(){
-    lowerUperCase = window.prompt("Choose 1 for lowercase characters,   Choose 2 for Upercase characters, Choose 3 for both lowercase and Upercase characters");
+    lowerUperCase = window.prompt("Please enter: 1 for lowercase characters, 2 for Upercase characters, 3 for both lowercase and Upercase characters");
     if (lowerUperCase ===""||lowerUperCase === null){
         window.alert("You need to provide a valid answer! Please try again.");
         return chooseLowUpCase();
@@ -188,7 +188,7 @@ function chooseLowUpCase(){
 
 //fuction to chose if password will contain Numbers or not
 function chooseNumber(){
-    promptNumber  = window.prompt("Choose 1 to include Numbers, Choose 2 not to include Numbers");
+    promptNumber  = window.prompt("Please enter: 1 for the password to include Numbers, or 2 in order to not to include Numbers");
     if (promptNumber ===""||promptNumber === null){
         window.alert("You need to provide a valid answer! Please try again.");
         return chooseNumber();
@@ -217,7 +217,7 @@ function chooseNumber(){
 
 //fuction to chose if password will contain special characters or not
 function chooseSpecialCharacter(){
-    promptSpecialChr  = window.prompt("Choose 1 to include Special Characters, Choose 2 not to include Special Characters");
+    promptSpecialChr  = window.prompt("Please enter 1 for the password to include Special Characters, Choose 2 not to include Special Characters");
     if (promptSpecialChr === "" ||promptSpecialChr === null){
         window.alert("You need to provide a valid answer! Please try again.");
         return chooseSpecialCharacter();
