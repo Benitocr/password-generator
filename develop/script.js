@@ -1,10 +1,34 @@
 // Assignment code here
+// Defining  variables
 var promptlength;
 var lowerUperCase;
 var promptNumber;
 var promptSpecialChr;
+var stringLowUP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+var string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-// fuction to ash for the leght of characters
+
+function getRandomString(length, randomChars ) {
+    var result = '';
+    for ( var i = 0; i < length; i++ ) {
+        result += randomChars.charAt(Math.floor(Math.random() * randomChars.length));
+    }
+    return result;
+}
+
+
+
+
+
+// fuction to generate a random numeric valuen 
+var randomNumber = function(min, max) {
+    var value = Math.floor(Math.random() * (max - min) + min);
+  
+    return value;
+  };
+  
+
+// fuction to ask for the leght of characters
 function characterLength(){
     promptlength = window.prompt("Choose a length of at least 8 characters and no more than 128 characters");
     if (promptlength ===""||promptlength === null){
@@ -106,6 +130,37 @@ function generatePassword(){
     chooseLowUpCase();
     chooseNumber();
     chooseSpecialCharacter();
+
+    if (promptSpecialChr === 2 && promptNumber === 2){
+        switch (lowerUperCase) {
+            case 1:
+                // window.alert("Password will contain only lowercase characters");
+                var randomChars = 'abcdefghijklmnopqrstuvwxyz';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert(passwd);  
+                break;
+            case 2:
+                // window.alert("Password will contain only Upercase characters");
+                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert(passwd); 
+                break;
+            case 3:
+            //   window.alert("Password will contain both Lower and Upper Case characters");
+                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert(passwd);
+                break;
+            default:
+              
+              break;
+          }
+    }else if(promptSpecialChr === 1 && promptNumber === 2){
+        
+        
+
+    };
+
 
 
 
