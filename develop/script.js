@@ -4,10 +4,8 @@ var promptlength;
 var lowerUperCase;
 var promptNumber;
 var promptSpecialChr;
-var stringLowUP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-var string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-
+// fuction to generate a random string
 function getRandomString(length, randomChars ) {
     var result = '';
     for ( var i = 0; i < length; i++ ) {
@@ -20,14 +18,124 @@ function getRandomString(length, randomChars ) {
 
 
 
-// fuction to generate a random numeric valuen 
-var randomNumber = function(min, max) {
-    var value = Math.floor(Math.random() * (max - min) + min);
-  
-    return value;
-  };
-  
+function generatePassword(){
+    characterLength();
+    chooseLowUpCase();
+    chooseNumber();
+    chooseSpecialCharacter();
 
+    if (promptSpecialChr === 2 && promptNumber === 2){
+        switch (lowerUperCase) {
+            case 1:
+                // window.alert("Password will contain only lowercase characters");
+                var randomChars = 'abcdefghijklmnopqrstuvwxyz';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd);  
+                break;
+            case 2:
+                // window.alert("Password will contain only Upercase characters");
+                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd); 
+                break;
+            case 3:
+            //   window.alert("Password will contain both Lower and Upper Case characters");
+                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd);
+                break;
+            default:
+              
+              break;
+          }
+    }// condition to consider Special Character and No number
+    else if(promptSpecialChr === 1 && promptNumber === 2){
+        switch (lowerUperCase) {
+            case 1:
+                // window.alert("Password will contain only lowercase characters");
+                var randomChars = 'abcdefghijklmnopqrstuvwxyz!@#$%^&*()!@#$%^&*()!@#$%^&*()';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd);  
+                break;
+            case 2:
+                // window.alert("Password will contain only Upercase characters");
+                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()!@#$%^&*()!@#$%^&*()';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd); 
+                break;
+            case 3:
+            //   window.alert("Password will contain both Lower and Upper Case characters");
+                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()!@#$%^&*()!@#$%^&*()!@#$%^&*()';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd);
+                break;
+            default:
+              
+              break;
+          }
+        
+
+    } // condition to consider special character and number
+    else if(promptSpecialChr === 1 && promptNumber === 1){
+        switch (lowerUperCase) {
+            case 1:
+                // window.alert("Password will contain only lowercase characters");
+                var randomChars = 'abcdefghijk!@#$%^&*()1234567890lmnopqrstuvwxyz!@#$%^&*()1234567890!@#$%^&*()1234567890';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd);  
+                break;
+            case 2:
+                // window.alert("Password will contain only Upercase characters");
+                var randomChars = 'ABCDEFGHI!@#$%^&*()1234567890JKLMNOPQRSTUVWXYZ!@#$%^&*()1234567890!@#$%^&*()1234567890';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd); 
+                break;
+            case 3:
+            //   window.alert("Password will contain both Lower and Upper Case characters");
+                var randomChars = 'ABCDEFGHIJ!@#$%^&*()1234567890KL!@#$%^&*()1234567890MNOPQRSTUVWXYZabcdef!@#$%^&*()1234567890ghijklmnopqrstuvwxyz';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd);
+                break;
+            default:
+              
+              break;
+          }
+    }else if(promptSpecialChr === 2 && promptNumber === 1){
+        switch (lowerUperCase) {
+            case 1:
+                // window.alert("Password will contain only lowercase characters");
+                var randomChars = 'abcdefghijklmnopqrstuvwxyz123456789012345678901234567890';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd);  
+                break;
+            case 2:
+                // window.alert("Password will contain only Upercase characters");
+                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789012345678901234567890';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd); 
+                break;
+            case 3:
+            //   window.alert("Password will contain both Lower and Upper Case characters");
+                var randomChars = 'ABCDEFGHI1234567890JKLMNOPQRSTUVWXYZ1234567890abcde1234567890fghijklmnopqrstuvwxyz1234567890';
+                var passwd = getRandomString(promptlength, randomChars);
+                window.alert("Next is the password: " + passwd);
+                break;
+            default:
+              
+              break;
+          }
+    };
+
+
+
+
+    
+
+
+}
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
 // fuction to ask for the leght of characters
 function characterLength(){
     promptlength = window.prompt("Choose a length of at least 8 characters and no more than 128 characters");
@@ -82,7 +190,7 @@ function chooseNumber(){
     promptNumber = parseInt(promptNumber);
     switch (promptNumber) {
         case 1:
-            window.alert("Password will contain Numbers");  
+            window.alert("Password will consider to contain Numbers");  
             break;
         case 2:
             window.alert("Password will not contain Numbers");
@@ -109,7 +217,7 @@ function chooseSpecialCharacter(){
     promptSpecialChr = parseInt(promptSpecialChr);
     switch (promptSpecialChr) {
         case 1:
-            window.alert("Password will contain Special Characters");  
+            window.alert("Password will consider to include Special Characters");  
             break;
         case 2:
             window.alert("Password will not contain Special Characters");
@@ -123,54 +231,6 @@ function chooseSpecialCharacter(){
 
 }
 
-
-
-function generatePassword(){
-    characterLength();
-    chooseLowUpCase();
-    chooseNumber();
-    chooseSpecialCharacter();
-
-    if (promptSpecialChr === 2 && promptNumber === 2){
-        switch (lowerUperCase) {
-            case 1:
-                // window.alert("Password will contain only lowercase characters");
-                var randomChars = 'abcdefghijklmnopqrstuvwxyz';
-                var passwd = getRandomString(promptlength, randomChars);
-                window.alert(passwd);  
-                break;
-            case 2:
-                // window.alert("Password will contain only Upercase characters");
-                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                var passwd = getRandomString(promptlength, randomChars);
-                window.alert(passwd); 
-                break;
-            case 3:
-            //   window.alert("Password will contain both Lower and Upper Case characters");
-                var randomChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-                var passwd = getRandomString(promptlength, randomChars);
-                window.alert(passwd);
-                break;
-            default:
-              
-              break;
-          }
-    }else if(promptSpecialChr === 1 && promptNumber === 2){
-        
-        
-
-    };
-
-
-
-
-    
-
-
-}
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
