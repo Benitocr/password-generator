@@ -12,7 +12,7 @@ A website that generates random passwords.
 ## Website
 https://benitocr.github.io/password-generator/
 
-![page of password generator](Develop/images/mokup.JPG)
+![page of password generator](develop/images/mokup.JPG)
 
 ## Contribution
 Made by Benito
